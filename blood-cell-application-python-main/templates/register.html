@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/main2.css')}}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="{{url_for('static',filename='js/script.js')}}"></script>
+
+<title>Blood-Cell</title>
+
+</head>
+<body>
+
+<div class="col-12" style="height: 350px">
+	
+	<div id="nav" class="col-12">
+		<ul>
+		  <li><a href="/index">Home</a></li>
+		  <li><a href="/about">About</a></li>
+		  <li><a href="/contact">Contact</a></li>
+		  <li><a class="active" href="/register">Be A Donor</a></li>
+		  <li><a href="/login">Login</a></li>
+		  <li><a href="/find_blood">Find Donor</a></li>
+		</ul>
+	</div>
+	<span class="info2" style="left: 40%">REGISTER</span>
+	<img class="myFrontPic col-12" src="{{url_for('static',filename='images/img1.jpg')}}" style="height: 350px;">
+</div>
+<br/>
+	<div class="col-12" style="overflow: auto; padding: 0 20% 0 20%;">
+		<div class="col-12" style="text-align: left; padding: 5%; background-color: rgb(217, 219, 224);">
+			<form action="/passdb" method="post">	
+				Username(required)<span style="color: red;">*</span><br>
+				<input class="in" type="text" name="username" placeholder="Enter username" required style="color: black;"><br><br>
+				Password(required)<span style="color: red;">*</span><br>
+				<input class="in" type="text" name="password" placeholder="Enter password" required style="color: black;"><br><br>			
+				Fullname(required)<span style="color: red;">*</span><br>
+				<input class="in" type="text" name="fullname" placeholder="Enter Fullname" required style="color: black;"><br><br>
+				Date Of Birth(required)<span style="color: red;">*</span><br>
+				<input class="in" type="date" name="dob" placeholder="dd/mm/yyyy" required><br><br>
+				Gender(required)<span style="color: red;">*</span><br>
+				<input type="radio" name="gender" value="male" checked>Male
+				<input type="radio" name="gender" value="female">Female
+				<input type="radio" name="gender" value="other">Other<br><br>
+				Blood Group(required)<span style="color: red;">*</span><br>
+				<select name="bloodgroup" required>
+						<option value="">Enter Blood Group</option>
+						<option value="1">A+</option>
+						<option value="2">A-</option>
+						<option value="3">B+</option>
+						<option value="4">B-</option>
+						<option value="5">O+</option>
+						<option value="6">O-</option>
+						<option value="7">AB+</option>
+						<option value="8">AB-</option>
+				</select><br><br>
+				Mobile(required)<span style="color: red;">*</span><br>
+				<input class="in" type="text" name="mobile" placeholder="Enter Mobile No." pattern="[0-9]{10}" required style="color: black;"><br><br>
+				Email(required)<span style="color: red;">*</span><br>
+				<input class="in" type="email" name="email" placeholder="Enter Your Email" required style="color: black;"><br><br>
+				Town<br>
+				<input class="in" type="text" name="town" placeholder="Enter Town" style="color: black;"><br><br>
+				State(required)<span style="color: red;">*</span><br>
+				<input class="in" type="text" name="state" placeholder="Enter State" required style="color: black;"><br><br>
+				<input class="qw" style="font-size: 16px; color: white;" type="submit" value="SEND">
+			</form>
+		</div>
+	</div>
+
+    {% if resultCode is defined %}
+        <h1 style="text-align: center;">{{resultCode}} </h1>;
+    {%endif%}    
+
+<br/>
+
+</body>
+</html>

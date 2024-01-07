@@ -1,0 +1,64 @@
+<!--<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/main2.css')}}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="{{url_for('static',filename='js/script.js')}}"></script>
+
+<title>Blood-Cell</title>
+
+</head>
+<body>
+
+<div class="col-12" style="height: 350px">
+	<div id="comname">
+		<i class="fa fa-balance-scale" aria-hidden="true"></i><br><br>BLOOD <b>CELL</b>
+	</div>
+	<div id="nav" class="col-12">
+		<ul>
+		  <li><a href="/index">Home</a></li>
+		  <li><a href="/about">About</a></li>
+		  <li><a href="/contact">Contact</a></li>
+		  <li><a href="/register">Be A Donor</a></li>
+		  <li><a class="active" href="/change_details">Change Details</a></li>
+		  <li><a href="/find_blood">Find Donor</a></li>
+		</ul>
+	</div>
+	<span class="info2" style="left: 33%">CHANGE DETAILS</span>
+	<img class="myFrontPic col-12" src="{{url_for('static',filename='images/img10.jpg')}}">
+</div>
+	
+<div align="center" style="margin: 0; padding: 5%;text-align:left" >
+		  
+	<form action="/change_details1" method="post">
+
+		    <div class="container" align="center">
+		      <label><b>Username</b></label>
+		      <br>
+		      <input style="width: 50%" class="in" type="text" placeholder="Enter Username" name="uname" required>
+              <br>
+		      <label><b>Password</b></label>
+		      <br>
+		      <input style="width: 50%" class="in" type="password" placeholder="Enter Password" name="psw" required><br><br>
+		        <br>
+		      <button style="width: 50%" type="submit" class="qw">Login</button>
+		    </div>
+
+		    
+		  </form>
+		</div>
+	</div>
+
+
+<div id="footer" class="col-12" style="margin: 0; padding: 0;overflow: auto;">
+	{% extends "footer.html" %}
+</div>
+
+
+
+</body>
+
+
+</html>-->

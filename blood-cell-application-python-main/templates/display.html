@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Display Details</title>
+ <style>    .container {
+    width: 50%;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.btn { display: inline-block; padding: 10px 20px; margin: 10px 0; background-color: black; color: #fff; text-decoration: none; border-radius: 5px; } .btn:hover { background-color: #0056b3; } .btn-logout { background-color: #dc3545; color: #fff; } .btn-logout:hover { background-color: #a81d2c; } 
+</style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous"></style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center">Donor Details</h1>
+                <table class="table table-bordered">
+                    <tr>
+                        <th>UserName</th>
+                        <th>Password</th>
+                        <th>Name of Donor</th>
+                        <th>Date of Birth</th>
+                        <th>Gender</th>
+                        <th>Blood Group</th>
+                        <th>Mobile</th>
+                        <th>Email</th>
+                        <th>Town</th>
+                        <th>State</th>
+                    </tr>
+                    
+                    <tr>
+                        <td>{{ donordetails['username']}}</td>
+                        <td>{{ donordetails['password']}}</td>
+
+                        <td>{{donordetails['name'] }}</td>
+                        <td>{{donordetails['dob'] }}</td>
+                        <td>{{donordetails['gender'] }}</td>
+                        <td>{{donordetails['bloodgroup'] }}</td>
+                        <td>{{donordetails['pno'] }}</td>
+                        <td>{{donordetails['email'] }}</td>
+                        <td>{{donordetails['town'] }}</td>
+                        <td>{{donordetails['city']}}</td>
+                    </tr>
+                    
+                </table>
+            </div>
+        </div>
+    </div>
+    <a href='/logout' class="btn btn-logout">Logout</a>
+</body>
+</html>

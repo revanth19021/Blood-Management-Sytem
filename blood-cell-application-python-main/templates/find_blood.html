@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/main2.css')}}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="{{url_for('static',filename='js/script.js')}}"></script>
+
+
+
+</head>
+<body>
+
+<div class="col-12" style="height: 350px">
+	
+	<div id="nav" class="col-12">
+		<ul>
+		  <li><a href="/index">Home</a></li>
+		  <li><a href="/about">About</a></li>
+		  <li><a href="/contact">Contact</a></li>
+		  <li><a href="/register">Be A Donor</a></li>
+		  <li><a class="active" href="/find_blood">Find Donor</a></li>
+		  <li><a href="/login">Login</a></li>
+
+		</ul>
+	</div>
+	<span class="info2" style="left: 36%">FIND BLOOD</span>
+	<img class="myFrontPic col-12" src="{{url_for('static',filename='images/img15.jpg')}}" style="height: 350px;">
+</div>
+<br/>
+	<div style="margin: 0; padding: 0 3% 0 7%; text-align: center;">
+		<div class="col-11" style="background-color: rgba(82, 127, 99,0.5); padding: 0">
+			<div style="background-color: rgb(158, 242, 113);overflow: auto;width: 100%; padding: 5px;">
+				<form>
+					<label><p style="font-size: 20px; color: #bb0000;">Select your blood group:</p></label>
+					<select name="bloodgroup">
+						<option value="">Enter Blood Group</option>
+						<option value="1">A+</option>
+						<option value="2">A-</option>
+						<option value="3">B+</option>
+						<option value="4">B-</option>
+						<option value="5">O+</option>
+						<option value="6">O-</option>
+						<option value="7">AB+</option>
+						<option value="8">AB-</option>
+					</select>
+				</form>
+			</div>
+			
+			<div id="txtHint" style="padding: 5% 0 5% 0; width: 100%; overflow: auto;">
+            <center>
+                <h3>Blood Type 1: A+, 2:A-, 3:B+, 4:B-, 5:O+, 6:O-, 7:AB+, 8:AB-</h3>
+            <table border="2">
+                <tr>
+                    <th>Name of Donor</th>
+                    <th>Date of Birth</th>
+                    <th>Gender</th>
+                    <th>Blood Group</th>
+                    <th>Mobile</th>
+                    <th>Email</th>
+                    <th>Town</th>
+                    <th>State</th>
+                </tr>
+                {% for row in rows %}
+            <tr>
+
+                <td>{{ row['name'] }}</td>
+                <td>{{ row['dob'] }}</td>
+                <td>{{ row['gender'] }}</td>
+                <td>{{ row['bloodgroup'] }}</td>
+                <td>{{ row['pno'] }}</td>
+                <td>{{ row['email'] }}</td>
+                <td>{{ row['town'] }}</td>
+                <td>{{ row['city']}}</td>
+            </tr>
+            {% endfor %}
+            </table>
+        </center>
+        </div>
+		</div>
+        
+	</div>
+
+<br/>
+<div id="footer" class="col-12" style="margin: 0; padding: 0;overflow: auto;">
+	{% extends "footer.html" %}
+</div>
+
+
+</body>
+
+
+</html>

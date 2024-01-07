@@ -1,0 +1,248 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width , initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+
+  <title>Blood Management System</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    section {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      background-size: cover;
+      background-position: center;
+    }
+
+    header {
+      position: relative;
+      top: 0;
+      width: 100%;
+      padding: 30px 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .logo {
+      position: relative;
+      color: #000;
+      font-size: 30px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    header .navigation a {
+      color: #000;
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 1px;
+      padding: 2px 15px;
+      border-radius: 20px;
+      transition: 0.3s;
+      transition-property: background;
+    }
+
+    header .navigation a:not(:last-child) {
+      margin-right: 30px;
+    }
+
+    header .navigation a:hover {
+      background: #fff;
+    }
+
+    body {
+      min-height: 100vh;
+      background: url(https://img.freepik.com/free-photo/book-with-green-board-background_1150-3837.jpg?w=740&t=st=1667032601~exp=1667033201~hmac=e3f1f227f5492de18370dddf68c33e2e929f116095486f8f4fbcb821056a0d80) no-repeat;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .contact-section {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .contact-info {
+      color: black;
+      max-width: 500px;
+      line-height: 65px;
+      padding-left: 50px;
+      font-size: 18px;
+    }
+
+    .contact-info i {
+      margin-right: 20px;
+      font-size: 25px;
+    }
+
+    .contact-form {
+      max-width: 700px;
+      margin-right: 50px;
+    }
+
+    .contact-info,
+    .contact-form {
+      flex: 1;
+    }
+
+    .contact-form h2 {
+      color: #fff;
+      text-align: center;
+      font-size: 35px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+
+    .contact-form .text-box {
+      background: #000;
+      color: #fff;
+      border: none;
+      width: calc(50% - 10px);
+      height: 50px;
+      padding: 12px;
+      font-size: 15px;
+      border-radius: 5px;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      opacity: 0.9;
+    }
+
+    .contact-form .text-box:first-child {
+      margin-right: 15px;
+    }
+
+    .contact-form textarea {
+      background: #000;
+      color: #fff;
+      border: none;
+      width: 100%;
+      padding: 12px;
+      font-size: 15px;
+      min-height: 200px;
+      max-height: 400px;
+      resize: vertical;
+      border-radius: 5px;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      opacity: 0.9;
+    }
+
+    .contact-form .send-btn {
+      float: right;
+      background: #2E94E3;
+      color: #fff;
+      border: none;
+      width: 120px;
+      height: 40px;
+      font-size: 15px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+      transition-property: background;
+    }
+
+    .contact-form .send-btn:hover {
+      background: #0582E3;
+    }
+
+    @media screen and (max-width: 950px) {
+      .contact-section {
+        flex-direction: column;
+      }
+
+      .contact-info,
+      .contact-form {
+        margin: 30px 50px;
+      }
+
+      .contact-form h2 {
+        font-size: 30px;
+      }
+
+      .contact-form .text-box {
+        width: 100%;
+      }
+    }
+
+    /*css for alert messages*/
+
+    .alert-success {
+      z-index: 1;
+      background: #D4EDDA;
+      font-size: 18px;
+      padding: 20px 40px;
+      min-width: 420px;
+      position: fixed;
+      right: 0;
+      top: 10px;
+      border-left: 8px solid #3AD66E;
+      border-radius: 4px;
+    }
+
+    .alert-error {
+      z-index: 1;
+      background: #FFF3CD;
+      font-size: 18px;
+      padding: 20px 40px;
+      min-width: 420px;
+      position: fixed;
+      right: 0;
+      top: 10px;
+      border-left: 8px solid #FFA502;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <header>
+      <h2><a href="#" class="logo">Donate</a></h2>
+      <div class="navigation">
+        <a href="/index">Home</a>
+        <a href="/about">About</a>
+        <a class="active"href="/contact">Contact</a>
+        <a href="/register">Be A Donor</a>
+        <a href="/find_blood">Find Donor</a>
+      </div>
+    </header>
+ <div class="contact-section">
+      <div class="contact-info">
+        <div><i class="fas fa-map-marker-alt"></i>Lakshmipuram 1-78-03, Guntur, India</div>
+        <div><i class="fas fa-envelope"></i>bloodmanagement@email.com</div>
+        <div><i class="fas fa-phone"></i>+91 7330848369</div>
+        <div><i class="fas fa-clock"></i>Mon - Fri 8:00 AM to 5:00 PM</div>
+      </div>
+      <div class="contact-form">
+        <h2>Contact Us</h2>
+        <form class="contact" action="" method="post">
+          <input type="text" name="name" class="text-box" placeholder="Your Name" required>
+          <input type="email" name="email" class="text-box" placeholder="Your Email" required>
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          <input type="submit" name="submit" class="send-btn" value="Send">
+        </form>
+      </div>
+    </div></body>
+</html>
